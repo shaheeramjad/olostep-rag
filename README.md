@@ -3,9 +3,8 @@
 Turn any documentation site into a RAG chatbot with Python and
 [Olostep](https://www.olostep.com) Crawls, with cited answers.
 
-<!-- Demo video: replace with the YouTube link -->
-> 📺 **Demo video:** _coming soon_ — "Turn Any Docs Site into a RAG
-> Chatbot with Python and Olostep"
+> 📺 **Video tutorial:** [watch the build on
+> YouTube](https://www.youtube.com/watch?v=wBBnrT6bPeY)
 
 ## Features
 
@@ -46,13 +45,17 @@ Then crawl, index and chat:
 
 ```bash
 python -m olostep_docs_rag crawl --site https://fastapi.tiangolo.com \
-    --include "/**" --exclude "/de/**,/es/**" --max-pages 500
+    --include "/tutorial/**" \
+    --exclude "/tutorial/security,/tutorial/security/**" --max-pages 40
 python -m olostep_docs_rag index
-python -m olostep_docs_rag ask "How do I add authentication?"
+python -m olostep_docs_rag ask "How do I make a query parameter optional?"
 streamlit run app.py
 ```
 
-Get an Olostep API key at <https://www.olostep.com/dashboard> and an
+A crawl costs about one Olostep credit per page, so `--max-pages` is
+also your credit cap.
+
+Get an Olostep API key at <https://www.olostep.com/dashboard/api-keys> and an
 Anthropic API key at <https://platform.claude.com>.
 
 ## CLI

@@ -89,6 +89,13 @@ Only things that actually happened are logged.
   ````
   In the latest crawl, 1 of 33 saved pages (`/fr`) has this style: 0
   code fences and `*   ` list markers.
+- **Gate 0 run (crawls `crawl_tlp4fmjq2n` + `crawl_5rbbwg47rq`, FastAPI
+  `/tutorial/**`):** 9 of 44 saved pages have no code fences at all,
+  e.g. `tutorial/sql-databases` and `tutorial/query-params-str-validations`.
+  4 more have fences but also lost some blocks to one-line inline code
+  (e.g. `tutorial/schema-extra-example`, `tutorial/handling-errors`).
+  A 5-page dry run just before (`crawl_8wml80xo7g`) had none flattened,
+  so it varies from run to run.
 - **Suggestion:** Always emit fenced code blocks and keep newlines in
   `<pre>`. Add the language tag when the HTML has one (`class="language-python"`).
   Fences currently have no language tag.
@@ -118,6 +125,10 @@ Only things that actually happened are logged.
   while the site links to `/de/`), which may be why `/de/**` didn't
   match. Separately, the other language homepages (`/fr`, `/ja`, `/ko`,
   `/ru`, ...) used 9 of the 30-page budget at depth 1.
+- **Seen again in the Gate 0 run:** `--exclude "/tutorial/security/**"`
+  kept every security sub-page out, but `/tutorial/security` itself was
+  crawled and indexed. So the sub-page half is now confirmed working,
+  and `/x/**` doesn't match `/x`.
 - **Example:** `data/crawl.json` → `urls` contains
   `https://fastapi.tiangolo.com/de` and `https://fastapi.tiangolo.com/es`.
 - **Suggestion:** Document whether `/x/**` should match `/x` (most

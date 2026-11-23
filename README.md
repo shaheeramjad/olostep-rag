@@ -31,11 +31,11 @@ Turn any documentation site into a RAG chatbot with Python and
 
 ## Quickstart
 
-Requires Python 3.10+.
+Requires Python 3.11 to 3.13 (the `olostep` SDK does not support 3.14 yet).
 
 ```bash
-git clone https://github.com/olostep/olostep-docs-rag
-cd olostep-docs-rag
+git clone https://github.com/shaheeramjad/olostep-rag
+cd olostep-rag
 python -m venv .venv && source .venv/bin/activate
 pip install -e ".[dev]"
 

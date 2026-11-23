@@ -8,7 +8,7 @@ version = "0.1.0"
 description = "Turn any docs site into a RAG chatbot with Olostep Crawls."
 readme = "README.md"
 license = { text = "MIT" }
-requires-python = ">=3.10"
+requires-python = ">=3.11,<3.14"
 dependencies = [
     "olostep>=1.2.3",
     "anthropic>=0.75",
@@ -18,6 +18,9 @@ dependencies = [
     "rich>=13.7",
     "streamlit>=1.40",
 ]
+
+[project.urls]
+Repository = "https://github.com/shaheeramjad/olostep-rag"
 
 [project.optional-dependencies]
 dev = ["pytest>=8.0", "ruff>=0.6"]
@@ -31,7 +34,7 @@ packages = ["src/olostep_docs_rag"]
 [tool.ruff]
 # Short lines read better in a video.
 line-length = 79
-target-version = "py310"
+target-version = "py311"
 src = ["src", "tests"]
 extend-exclude = ["data"]
 
